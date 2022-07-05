@@ -1,1 +1,37 @@
-Text
+GitHub Link: https://github.com/oneplus-x/jok3r
+Website Link: https://jok3r.readthedocs.io/en/latest/command_info.html
+
+
+Installation: 
+Pull docker image: sudo docker pull koutto/jok3r
+Run the docker container: sudo docker pull koutto/jok3r
+See all the tools : python3 jok3r.py toolbox --show-all
+Installing all the tools: python3 jok3r.py toolbox --install-all --fast
+Updating all the tools: python3 jok3r.py toolbox --update-all --fast
+
+Create a database to save all the scan:
+- python3 jok3r.py db
+- jok3rdb[default]> mission -a MayhemProject
+
+Run the attack: 
+- python3 jok3r.py attack -t https://www.websitelink/app/ --add MayhemProject
+- Exmaple with mysmartSA URL: python3 jok3r.py attack -t https://mysmartsa.com/ --add MayhemProject
+
+Run security checks against all services in the given mission and store results in the database
+- python3 jok3r.py attack -m MayhemProject --fast
+
+Run security checks against only FTP services running on ports 21/tcp and 2121/tcp from the mission
+- python3 jok3r.py attack -m MayhemProject -f "port=21,2121;service=ftp" --fast
+
+Run security checks against only FTP services running on ports 2121/tcp and all HTTP services on 192.168.1.42 from the mission
+- python3 jok3r.py attack -m MayhemProject -f "port=2121;service=ftp" -f "ip=192.168.1.42;service=http"
+
+To show results: 
+jok3rdb[default]> results -h
+usage: results [-h] [-s <check-id>] [<service-id>]
+   eg:  results -s 108
+
+
+
+
+
