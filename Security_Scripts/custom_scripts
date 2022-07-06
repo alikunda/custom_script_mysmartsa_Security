@@ -1,1 +1,30 @@
-test
+GitHub Link: https://github.com/PeterMosmans/security-scripts
+
+INSTALLATION:
+git clone https://github.com/PeterMosmans/security-scripts && \
+cd security-script && \
+pip3 install -r requirements.txt
+
+
+USAGE: analyze_hosts.py [-h] [--version] [--dry-run] [-i INPUTFILE]
+                        [-o OUTPUT_FILE] [--compact] [--queuefile QUEUEFILE]
+                        [--resume] [--settings SETTINGS] [--exit-code]
+                        [--force] [--debug] [-v] [-q] [--allports] [-n]
+                        [-p PORT] [--up] [--udp] [--framework] [--http]
+                        [--compression] [--headers] [--trace] [--redirect]
+                        [--force-ssl] [--json JSON] [--ssl] [--nikto]
+                        [--sslcert] [-w] [--proxy PROXY] [--timeout TIMEOUT]
+                        [--threads THREADS] [--user-agent USER_AGENT]
+                        [--password PASSWORD] [--username USERNAME]
+                        [--maxtime MAXTIME]
+                        [target]
+Scripts: 
+- python3 analyze_hosts.py [IP|URL] --http  //Check for various HTTP vulnerabilities (compression,headers, trace)
+- python3 analyze_hosts.py [IP|URL] --headers //Check for various HTTP headers
+- python3 analyze_hosts.py [IP|URL] --ssl  //Check for various SSL/TLS vulnerabilities
+- python3 analyze_hosts.py [IP|URL] --nikto //Run a nikto scan
+- python3 analyze_hosts.py [IP|URL] --framework //Analyze the website and run webscans
+- python3 analyze_hosts.py [IP|URL] --udp  //Check for open UDP ports as well
+- ./analyze_hosts.sh --sslcert [IP|URL]  //Shows details of a certificate
+- ./analyze_hosts.sh [--ports/-p] [IP|URL]   //nmap portscan (all ports, TCP and UDP)
+- ./analyze_hosts.sh [-w|--whois] [IP|URL]   // perform WHOIS lookup for (hostname and) IP address
