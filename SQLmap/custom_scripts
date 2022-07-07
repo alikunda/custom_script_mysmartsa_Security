@@ -1,0 +1,48 @@
+Github Link: https://github.com/sqlmapproject/sqlmap/wiki/Usage
+
+Installation:
+- git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+- cd sqlmap-dev
+
+Usage: python3 sqlmap.py -h  //show all the features\
+
+custom scripts: 
+- python3 sqlmap.py -u [URL]   //define target
+- python3 sqlmap.py -u [URL] -A AGENT, --user    //HTTP User-Agent header value
+- python3 sqlmap.py -u [URL] -method=[GET,POST,PUT, ETC]   //Force usage of given HTTP method (e.g. PUT)
+- python3 sqlmap.py -u [URL] -data = DATA     //Data string to be sent through POST (e.g. "id=1")
+- python3 sqlmap.py -u [URL] --cookie=COOKIE  //HTTP Cookie header value (e.g. "PHPSESSID=a8d127e..")
+- python3 sqlmap.py -u [URL] --skip=SKIP       //Skip testing for given parameter(s)
+- python3 sqlmap.py -u [URL] --param-filter=POST  //Select testable parameter(s) by place (e.g. "POST")
+- python3 sqlmap.py -u [URL] --dbms=DBMS         //Force back-end DBMS to provided value
+- python3 sqlmap.py -u [URL] --dbms-cred=DBMS. //DBMS authentication credentials (user:password)
+- python3 sqlmap.py -u [URL] --os=OS    //Force back-end DBMS operating system to provided value
+- python3 sqlmap.py -u [URL] --level=LEVEL       //Level of tests to perform (1-5, default 1)
+- python3 sqlmap.py -u [URL] --technique=TECH.  //SQL injection techniques to use (default "BEUSTQ")
+- python3 sqlmap.py -u [URL] --all      //Retrieve everything
+//Enumations:
+- python3 sqlmap.py -u [URL] {
+    --current-user      //Retrieve DBMS current user
+    --current-db        //Retrieve DBMS current database
+    --hostname          //Retrieve DBMS server hostname
+    --users             Enumerate DBMS users
+    --passwords         Enumerate DBMS users password hashes
+    --privileges        Enumerate DBMS users privileges
+    --roles             Enumerate DBMS users roles
+    --dbs               Enumerate DBMS databases
+    --tables            Enumerate DBMS database tables
+    --columns           Enumerate DBMS database table columns
+    --schema            Enumerate DBMS schema
+    --count             Retrieve number of entries for table(s)
+    --dump              Dump DBMS database table entries
+    --dump-all          Dump all DBMS databases tables entries
+    --search            Search column(s), table(s) and/or database name(s)
+    --comments          Check for DBMS comments during enumeration
+    --statements        Retrieve SQL statements being run on DBMS
+}
+//  Brute force: These options can be used to run brute force checks
+-python3 sqlmap.py -u [URL] {
+    --common-tables     Check existence of common tables
+    --common-columns    Check existence of common columns
+    --common-files      Check existence of common files
+}
