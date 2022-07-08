@@ -1,0 +1,32 @@
+Github Link: https://github.com/wapiti-scanner/wapiti
+Website Link: https://wapiti-scanner.github.io/
+
+INSTALLATION:
+- pip install wapiti3
+
+Usage: wapiti [-h] [-u URL] [--scope {page,folder,domain,url,punk}]
+              [-m MODULES_LIST] [--list-modules] [--update] [-l LEVEL]
+              [-p PROXY_URL] [--tor] [-a CREDENTIALS]
+              [--auth-type {basic,digest,ntlm,post}] [-c COOKIE_FILE]
+              [--drop-set-cookie] [--skip-crawl] [--resume-crawl]
+              [--flush-attacks] [--flush-session] [--store-session PATH]
+              [--store-config PATH] [-s URL] [-x URL] [-r PARAMETER]
+              [--skip PARAMETER] [-d DEPTH] [--max-links-per-page MAX]
+              [--max-files-per-dir MAX] [--max-scan-time SECONDS]
+              [--max-attack-time SECONDS] [--max-parameters MAX] [-S FORCE]
+              [--tasks tasks] [--external-endpoint EXTERNAL_ENDPOINT_URL]
+              [--internal-endpoint INTERNAL_ENDPOINT_URL]
+              [--endpoint ENDPOINT_URL] [--dns-endpoint DNS_ENDPOINT_DOMAIN]
+              [-t SECONDS] [-H HEADER] [-A AGENT] [--verify-ssl {0,1}] [--color]
+              [-v LEVEL] [--log OUTPUT_PATH] [-f FORMAT] [-o OUTPUT_PATH]
+              [--no-bugreport] [--version]
+
+wapiti -h // for displaying all the options
+Custom Scripts:
+- wapiti -u [URL]   //simple way to start scan
+- wapiti -u [URL] [-m MODULES_LIST: bindsql, brute_login_form, csrf, http_headers, methods, nikto, redirect,xss]  //scan with the specific modules depending upon the project
+- wapiti -u [URL] [-l LEVEL]  //set attack level
+- wapiti -u [URL] [-h HEADER / --header HEADER]   //Set a custom header to use for every requests
+- wapiti -u [URL] [--auth-type basic, digest, kerberos, ntlm, post]   //Set the authentication type to use
+
+
